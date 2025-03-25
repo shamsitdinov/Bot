@@ -41,7 +41,7 @@ const App = () => {
         <h1 className="text-center text-white text-4xl">STARTUM ONLINE COURSES</h1>
         <div className="grid grid-cols-[1fr,3fr] gap-4 max-md:grid-cols-1 ">
           <div className="bg-gray-700 text-white flex gap-5 flex-col p-4">
-            <h4 className="text-2xl text-green-500">{sum1}$</h4>
+            <h4 className="text-2xl text-green-500 uppercase"> total  {sum1}$</h4>
             {selectedCourse
               ? selectedCourse.map((item, index) => (
                   <div key={index} className="flex justify-between shadow-inner shadow-white rounded-md pl-2 bg-slate-800 items-center ">
