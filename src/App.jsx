@@ -5,16 +5,7 @@ import { onlineCourses } from "./data";
 const App = () => {
   const [courses, setCourses] = useState(onlineCourses);
   const [selectedCourse, setSelectedCourse] = useState([]);
-
   let newArr = [...selectedCourse];
-  const selectCourse = (num) => {
-    const newCourse = courses.find((item, index) => index === num);
-
-    if (!selectedCourse.some((courses) => courses.title === newCourse.title)) {
-      newArr.push(newCourse);
-      setSelectedCourse(newArr);
-    }
-  };
 
   let sum1 = 0;
   const price = (sum) => {
@@ -26,6 +17,15 @@ const App = () => {
     for (let i = 0; i < arr.length; i++) {
       sum1 += arr[i];
     }
+  };
+
+  const selectCourse = (num) => {
+    const newCourse = courses.find((item, index) => index === num);
+    if (!selectedCourse.some((courses) => courses.title === newCourse.title)) {
+      newArr.push(newCourse);
+      setSelectedCourse(newArr);
+    }
+    console.log(courses);
   };
   price();
 
@@ -41,7 +41,7 @@ const App = () => {
         <h1 className="text-center text-white text-4xl">STARTUM ONLINE COURSES</h1>
         <div className="grid grid-cols-[1fr,3fr] gap-4 max-md:grid-cols-1 ">
           <div className="bg-gray-700 text-white flex gap-5 flex-col p-4">
-            <h4 className="text-2xl text-green-500 uppercase"> total  {sum1}$</h4>
+            <h4 className="text-2xl text-green-500 uppercase"> total {sum1}$</h4>
             {selectedCourse
               ? selectedCourse.map((item, index) => (
                   <div key={index} className="flex justify-between shadow-inner shadow-white rounded-md pl-2 bg-slate-800 items-center ">
@@ -66,7 +66,13 @@ const App = () => {
                 <p>
                   <b>Price:</b> $ {item.price}
                 </p>
-                <button onClick={() => selectCourse(index, item)} className="p-2 rounded-md bg-green-700 text-white cursor-pointer w-full">
+                <button
+                  style={{
+                    backgroundColor: selectedCourse.some((course) => course.title === item.title) ? "red" : "green",
+                  }}
+                  onClick={() => selectCourse(index, item)}
+                  className="p-2 rounded-md bg-green-700 text-white cursor-pointer w-full"
+                >
                   Buy
                 </button>
               </div>
