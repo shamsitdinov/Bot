@@ -61,7 +61,7 @@ const App = () => {
                 <h3 className="text-3xl">
                   <b>Course:</b> {item.title}
                 </h3>
-                <p className="absolute top-2 left-2 bg-red-700 text-white p-2 rounded-md">{item.level}</p>
+                <p className="absolute top-2 left-2 bg-red-500 text-white p-2 rounded-md">{item.level}</p>
                 <p className="absolute top-2 right-2 bg-blue-700 text-white p-2 rounded-md">{item.length}</p>
                 <p>
                   <b>Price:</b> $ {item.price}
