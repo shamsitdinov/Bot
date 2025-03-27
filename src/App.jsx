@@ -40,7 +40,7 @@ const App = () => {
 
   return (
     <>
-      <div className="p-2 flex gap-10 flex-col">
+      <div className="p-2 flex gap-2 flex-col">
         <Navbar />
         <Header/>
        <Main deletItem={deletItem} selectCourse={selectCourse} courses={courses} selectedCourse={selectedCourse} sum1={sum1} />
