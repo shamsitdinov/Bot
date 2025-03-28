@@ -6,12 +6,12 @@ const Main = ({ deletItem, courses, selectCourse, selectedCourse, sum1, buyItem 
     <div className="w-[100%] mx-auto">
       <div className="grid rounded-md max-sm:w-full grid-cols-[1fr,3fr] gap-1 max-md:grid-cols-1 ">
         <div className="bg-[#013a52] border-gray-300 border-[1px] max-sm:overflow-auto text-white max-sm:h-[30vh] max-sm:w-full rounded-md flex gap-5 flex-col p-4">
-       <div>
-       <h4 className="text-xl py-1 text-center text-green-500 uppercase max-sm:sticky rounded-full bg-[#0B192C] max-sm:-top-5 "> total {sum1}$</h4>
-          <button type="button"  className="bg-green-600 w-full p-2 mt-3 text-white rounded-full" onClick={buyItem}>
-            BUY
-          </button>
-       </div>
+          <div>
+            <h4 className="text-xl py-1 text-center text-green-500 uppercase max-sm:sticky rounded-full bg-[#0B192C] max-sm:-top-5 "> total {sum1}$</h4>
+            <button type="button" className="bg-green-600 w-full p-2 mt-3 text-white rounded-full" onClick={buyItem}>
+              BUY
+            </button>
+          </div>
 
           {selectedCourse
             ? selectedCourse.map((item, index) => (

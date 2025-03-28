@@ -12,7 +12,9 @@ const App = () => {
 
   const telegram = window.Telegram.WebApp;
 
-  useEffect(() => {});
+  useEffect(() => {
+    telegram.ready();
+  }, []);
 
   let sum1 = 0;
   const price = (sum) => {
