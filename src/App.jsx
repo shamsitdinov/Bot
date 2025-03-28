@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React, { useCallback, useEffect } from "react";
 import { useState } from "react";
 import { onlineCourses } from "./data";
 import Navbar from "./components/Navbar";
@@ -12,9 +12,20 @@ const App = () => {
 
   const telegram = window.Telegram.WebApp;
 
+  const buyItem = () => {
+    telegram.MainButton.text = "Buy Course";
+    telegram.MainButton.show();
+  };
+  const sendItem = useCallback(() => {
+    telegram.sendData(JSON.stringify(selectedCourse));
+  }, [selectedCourse]);
+
   useEffect(() => {
+    telegram.onEvent("mainButtonClicked", sendItem);
     telegram.ready();
-  }, []);
+
+    return () => telegram.offEvent("mainButtonClicked", sendItem);
+  }, [selectedCourse, sendItem]);
 
   let sum1 = 0;
   const price = (sum) => {
@@ -42,11 +53,6 @@ const App = () => {
     const update = [...selectedCourse];
     update.splice(index, 1);
     setSelectedCourse(update);
-  };
-
-  const buyItem = () => {
-    telegram.MainButton.text = "Buy Course";
-    telegram.MainButton.show();
   };
 
   return (
