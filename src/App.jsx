@@ -21,9 +21,9 @@ const App = () => {
   }, [selectedCourse]);
 
   useEffect(() => {
-    telegram.onEvent("mainButtonClicked", sendItem);
+    setCourses(onlineCourses)
     telegram.ready();
-
+    telegram.onEvent("mainButtonClicked", sendItem);
     return () => telegram.offEvent("mainButtonClicked", sendItem);
   }, [selectedCourse, sendItem]);
 
