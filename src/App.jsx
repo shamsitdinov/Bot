@@ -12,6 +12,8 @@ const App = () => {
 
   const telegram = window.Telegram.WebApp;
 
+  useEffect(() => {});
+
   let sum1 = 0;
   const price = (sum) => {
     let arr = [];
@@ -40,16 +42,17 @@ const App = () => {
     setSelectedCourse(update);
   };
 
-  const buyItem=()=>{
-    telegram
-  }
+  const buyItem = () => {
+    telegram.MainButton.text = "Buy Course";
+    telegram.MainButton.show();
+  };
 
   return (
     <>
       <div className="p-2 flex gap-2 flex-col">
         <Navbar />
         <Header />
-        <Main deletItem={deletItem} selectCourse={selectCourse} courses={courses} selectedCourse={selectedCourse} sum1={sum1} />
+        <Main deletItem={deletItem} selectCourse={selectCourse} buyItem={buyItem} courses={courses} selectedCourse={selectedCourse} sum1={sum1} />
       </div>
     </>
   );
