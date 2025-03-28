@@ -5,7 +5,7 @@ const Navbar = () => {
     <div className="bg-[#013a52] py-2 px-10 h-[10vh] rounded-md">
       <nav className="flex justify-between items-center">
         <img className="w-[50px]" src={icon} alt="" />
-        <ul className="flex justify-between  w-[30%]">
+        <ul className="flex justify-between max-sm:gap-5  w-[30%]">
           <li className="text-white font-serif">
             <a href="">Home</a>
           </li>

@@ -6,7 +6,7 @@ const Main = ({ deletItem, courses, selectCourse, selectedCourse, sum1 }) => {
     <div className="w-[100%] mx-auto">
       <div className="grid rounded-md max-sm:w-full grid-cols-[1fr,3fr] gap-1 max-md:grid-cols-1 ">
         <div className="bg-[#013a52] border-gray-300 border-[1px] max-sm:overflow-auto text-white max-sm:h-[30vh] max-sm:w-full rounded-md flex gap-5 flex-col p-4">
-          <h4 className="text-xl py-1 text-center text-green-500 uppercase max-sm:sticky rounded-full bg-[#0B192C] max-sm:-top-5 "> total {sum1}$</h4>
+          <h4 className="text-xl py-1 text-center text-green-500 uppercase max-sm:sticky rounded-full bg-[#0B192C] max-sm:-top-5 "> total  {sum1}$</h4>
           {selectedCourse
             ? selectedCourse.map((item, index) => (
                 <div key={index} className="flex w-full   justify-between   shadow-white rounded-full pl-2 bg-[#0B192C] items-center ">
@@ -37,10 +37,10 @@ const Main = ({ deletItem, courses, selectCourse, selectedCourse, sum1 }) => {
               <p>$ {item.price}</p>
               <button
                 style={{
-                  backgroundColor: selectedCourse.some((course) => course.title === item.title) ? "red" : "green",
+                  backgroundColor: selectedCourse.some((course) => course.title === item.title) ? "red" : "#026b0b",
                 }}
                 onClick={() => selectCourse(index, item)}
-                className="p-2 rounded-md bg-green-700 text-white cursor-pointer w-[80%]  "
+                className="p-2 rounded-full text-white cursor-pointer w-[80%]  "
               >
                 Buy
               </button>
