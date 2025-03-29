@@ -35,7 +35,9 @@ const Main = ({ deletItem, courses, selectCourse, selectedCourse, sum1, buyItem 
               <h4 className="text-3xl">{<item.img />}</h4>
               <h3 className="text-3xl max-sm:text-xl">{item.title}</h3>
               <p className="absolute top-2 left-2 bg-red-500 text-white p-2 rounded-md">{item.level}</p>
+
               <p className="absolute top-2 right-2 bg-blue-700 text-white p-2 rounded-md">{item.length}</p>
+              <div className="max-sm:flex justify-center">
               <div className="flex gap-2">
                 <span className="text-orange-400">{<item.icon />}</span>
                 <span className="text-orange-400">{<item.icon />}</span>
@@ -45,6 +47,7 @@ const Main = ({ deletItem, courses, selectCourse, selectedCourse, sum1, buyItem 
                 {item.ico ? <span className="text-orange-400">{<item.ico />}</span> : <span className="text-orange-400">{<item.icon />}</span>}
               </div>
               <p>$ {item.price}</p>
+              </div>
               <button
                 style={{
                   backgroundColor: selectedCourse.some((course) => course.title === item.title) ? "red" : "#026b0b",
