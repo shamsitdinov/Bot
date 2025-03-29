@@ -37,7 +37,7 @@ const Main = ({ deletItem, courses, selectCourse, selectedCourse, sum1, buyItem 
               <p className="absolute top-2 left-2 bg-red-500 text-white p-2 rounded-md">{item.level}</p>
 
               <p className="absolute top-2 right-2 bg-blue-700 text-white p-2 rounded-md">{item.length}</p>
-              <div className="max-sm:flex justify-center">
+              <div className="max-sm:flex justify-center items-center gap-10">
               <div className="flex gap-2">
                 <span className="text-orange-400">{<item.icon />}</span>
                 <span className="text-orange-400">{<item.icon />}</span>
